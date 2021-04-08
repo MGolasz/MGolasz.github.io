@@ -1,0 +1,140 @@
+.header {
+  background-color: $white;
+  background: url('img/header-bg.png');
+  background-position: center;
+  height: 95vh;
+
+  .wrapper {
+    height: 100%;
+    font-family: Raleway;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .scroll-center {
+      align-self: center;
+      margin-bottom: 50px;
+    }
+
+    .nav {
+      margin-left: 20px;
+      margin-top: 30px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .nav-right {
+        display: none;
+
+        @include mb-up(lg) {
+          display: flex;
+          width: 80%;
+          justify-content: flex-end;
+        }
+
+        .nav-list {
+          @include reset-list;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          @include mb-up(lg) {
+            flex-direction: row;
+          }
+        }
+
+        .nav-link {
+          margin: 0 15px 0 15px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 25px;
+          color: black;
+          letter-spacing: -1px;
+          font-weight: 700;
+
+          &:focus {
+            border-top: 4px solid $orange;
+          }
+        }
+      }
+
+      .show {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        background-color: $white;
+        width: 100%;
+        z-index: 99;
+      }
+
+      .hamburger {
+        position: relative;
+        z-index: 999;
+        margin: 0 20px 0 0;
+        background: none;
+        border: none;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba($orange, 0.7);
+          border-radius: 20%;
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        @include mb-up(lg) {
+          display: none;
+        }
+
+        .header-menu {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+
+    .home {
+      margin-left: 50px;
+      display: flex;
+      flex-direction: column;
+      width: 370px;
+
+      .home-text {
+        .home-title {
+          letter-spacing: -1px;
+          font-size: 60px;
+          font-weight: 900;
+        }
+
+        .home-alt-text {
+          letter-spacing: -1px;
+          font-size: 17px;
+          font-weight: 300;
+        }
+
+        .get-free-now {
+          margin-top: 50px;
+          border: none;
+          background-color: $orange;
+          color: $white;
+          height: 56px;
+          width: 200px;
+          font-family: Raleway;
+          font-size: 27px;
+          font-weight: 300;
+          box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+}
